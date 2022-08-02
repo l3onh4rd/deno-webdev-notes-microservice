@@ -12,7 +12,7 @@ const PORT = 6886;
 const app = new Application();
 
 app.use(
-    oakCors({origin: [""]})
+    oakCors({origin: ["http://webdevcoffe-deno-microservice.s3-website.eu-central-1.amazonaws.com/"]})
 );
 
 // use router of note controlleers
