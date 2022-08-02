@@ -1,0 +1,9 @@
+To update deps.ts file, run following command on project folder level
+
+deno cache --lock=lock.json --lock-write src/deps.ts
+
+######################################################################
+
+To install all libraries from lock file, run following command
+
+deno cache --lock=json src/deps.ts

@@ -1,0 +1,42 @@
+openapi: 3.0.0
+info:
+  description: API for WebDev Notes Microservice
+  version: 0.1.0
+  title: WebDev Notes Microservice
+servers:
+  - url: https://web-dev-coffee-deno.deno.dev/api
+    description: Production Server
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerAuth: [] 
+paths:
+  /notes/{collection}:
+    get:
+      tags:
+      - "note"
+      summary: "Get all available Notes"
+      description: "Retrive all available notes from the server."
+      operationId: "readNotes"
+      parameters:
+        - name: collection
+          in: path
+          required: true
+          description: Name of the collection of notes to search in
+          schema:
+            type: string
+            example: basic_notes
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "Successful operation which returns all available notes"
+      security:
+        - bearerAuth: []

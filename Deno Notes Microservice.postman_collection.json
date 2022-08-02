@@ -1,0 +1,678 @@
+{
+	"info": {
+		"_postman_id": "84db0f3c-7d6d-4358-8834-fe1cd5103416",
+		"name": "Deno Notes Microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17162627"
+	},
+	"item": [
+		{
+			"name": "# Login",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Leonhard\",\r\n    \"password\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6886/api/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "6886",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "# Login (Deployment)",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Leonhard\",\r\n    \"password\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://web-dev-coffee-deno.deno.dev/api/user/login",
+					"protocol": "https",
+					"host": [
+						"web-dev-coffee-deno",
+						"deno",
+						"dev"
+					],
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Note (Local)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Leonhard\",\r\n    \"notesTitle\": \"Test Titel\",\r\n    \"notesSubTitle\": \"Test Sub Titel\",\r\n    \"note\": {\r\n        \"Test\": 2,\r\n        \"Notiz 1\": \"Meine zweite Notiz\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6886/api/note/basic_notes",
+					"host": [
+						"localhost"
+					],
+					"port": "6886",
+					"path": [
+						"api",
+						"note",
+						"basic_notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Notes (Local)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6886/api/notes/basic_notes",
+					"host": [
+						"localhost"
+					],
+					"port": "6886",
+					"path": [
+						"api",
+						"notes",
+						"basic_notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Notes (Local)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Leonhard\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6886/api/notes/basic_notes",
+					"host": [
+						"localhost"
+					],
+					"port": "6886",
+					"path": [
+						"api",
+						"notes",
+						"basic_notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Note (Local)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6886/api/notes/basic_notes/9107004d-2fec-4139-b78c-dc1de7b6220e",
+					"host": [
+						"localhost"
+					],
+					"port": "6886",
+					"path": [
+						"api",
+						"notes",
+						"basic_notes",
+						"9107004d-2fec-4139-b78c-dc1de7b6220e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Note (Local)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"note\": {\r\n        \"Update\": \"Update\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6886/api/notes/basic_notes/9107004d-2fec-4139-b78c-dc1de7b6220e",
+					"host": [
+						"localhost"
+					],
+					"port": "6886",
+					"path": [
+						"api",
+						"notes",
+						"basic_notes",
+						"9107004d-2fec-4139-b78c-dc1de7b6220e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Note (Local)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:6886/api/notes/basic_notes/bd5ae59b-ded1-47e0-8a66-8867ff04b419",
+					"host": [
+						"localhost"
+					],
+					"port": "6886",
+					"path": [
+						"api",
+						"notes",
+						"basic_notes",
+						"bd5ae59b-ded1-47e0-8a66-8867ff04b419"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Note (Deployment)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Leonhard\",\r\n    \"notesTitle\": \"Test Titel\",\r\n    \"notesSubTitle\": \"Test Sub Titel\",\r\n    \"note\": {\r\n        \"Test\": \"Test\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://web-dev-coffee-deno.deno.dev/api/note/basic_notes",
+					"protocol": "https",
+					"host": [
+						"web-dev-coffee-deno",
+						"deno",
+						"dev"
+					],
+					"path": [
+						"api",
+						"note",
+						"basic_notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Notes (Deployment)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://web-dev-coffee-deno.deno.dev/api/notes/basic_notes",
+					"protocol": "https",
+					"host": [
+						"web-dev-coffee-deno",
+						"deno",
+						"dev"
+					],
+					"path": [
+						"api",
+						"notes",
+						"basic_notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Notes (Deployment)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Leonhard\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://web-dev-coffee-deno.deno.dev/api/notes/basic_notes",
+					"protocol": "https",
+					"host": [
+						"web-dev-coffee-deno",
+						"deno",
+						"dev"
+					],
+					"path": [
+						"api",
+						"notes",
+						"basic_notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Note (Deployment)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://web-dev-coffee-deno.deno.dev/api/notes/basic_notes/9107004d-2fec-4139-b78c-dc1de7b6220e",
+					"protocol": "https",
+					"host": [
+						"web-dev-coffee-deno",
+						"deno",
+						"dev"
+					],
+					"path": [
+						"api",
+						"notes",
+						"basic_notes",
+						"9107004d-2fec-4139-b78c-dc1de7b6220e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Note (Deployment)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"note\": {\r\n        \"Update 2\": \"Update 2\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://web-dev-coffee-deno.deno.dev/api/notes/basic_notes/9107004d-2fec-4139-b78c-dc1de7b6220e",
+					"protocol": "https",
+					"host": [
+						"web-dev-coffee-deno",
+						"deno",
+						"dev"
+					],
+					"path": [
+						"api",
+						"notes",
+						"basic_notes",
+						"9107004d-2fec-4139-b78c-dc1de7b6220e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Note (Deployment)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://web-dev-coffee-deno.deno.dev/api/notes/basic_notes/b063c93a-505c-42ac-9e2f-0fc295b41f36",
+					"protocol": "https",
+					"host": [
+						"web-dev-coffee-deno",
+						"deno",
+						"dev"
+					],
+					"path": [
+						"api",
+						"notes",
+						"basic_notes",
+						"b063c93a-505c-42ac-9e2f-0fc295b41f36"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User (Local)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Leonhard2\",\r\n    \"password\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6886/api/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6886",
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users (Local)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:6886/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6886",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read User (Local)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:6886/api/user/Leonhard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6886",
+					"path": [
+						"api",
+						"user",
+						"Leonhard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User (Local)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Leonhard3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6886/api/user/Leonhard2",
+					"host": [
+						"localhost"
+					],
+					"port": "6886",
+					"path": [
+						"api",
+						"user",
+						"Leonhard2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User (Local)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:6886/api/user/Leonhard3",
+					"host": [
+						"localhost"
+					],
+					"port": "6886",
+					"path": [
+						"api",
+						"user",
+						"Leonhard3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
