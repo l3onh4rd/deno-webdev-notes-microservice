@@ -2,70 +2,74 @@
  * - route to update one note by id
  */
 
-import { BASE_URI, DATABASE, DATA_API_KEY, DATA_SOURCE } from "../../constants.ts";
+import {
+  BASE_URI,
+  DATA_API_KEY,
+  DATA_SOURCE,
+  DATABASE,
+} from "../../constants.ts";
 
 const options = {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
-    "api-key": DATA_API_KEY 
+    "api-key": DATA_API_KEY,
   },
-  body: ""
+  body: "",
 };
 
 // @description: GET all notes by username
 // @route POST /api/notes/:collection
-const readNotesByUsername = async ({ 
-    params,
-    request,
-    response 
-  }: { 
-    params: { collection : string},
-    request: any,
-    response: any;
-   }) => {
-    try {
-      const body = await request.body();
-      const bodyData = await body.value;
+const readNotesByUsername = async ({
+  params,
+  request,
+  response,
+}: {
+  params: { collection: string };
+  request: any;
+  response: any;
+}) => {
+  try {
+    const body = await request.body();
+    const bodyData = await body.value;
 
-      const URI = `${BASE_URI}/find`;
-      const query = {
-        collection: params.collection,
-        database: DATABASE,
-        dataSource: DATA_SOURCE,
-        filter: { username: bodyData.username }
-      };
-      options.body = JSON.stringify(query);
-      const dataResponse = await fetch(URI, options);
-      const allNotes = await dataResponse.json();
+    const URI = `${BASE_URI}/find`;
+    const query = {
+      collection: params.collection,
+      database: DATABASE,
+      dataSource: DATA_SOURCE,
+      filter: { username: bodyData.username },
+    };
+    options.body = JSON.stringify(query);
+    const dataResponse = await fetch(URI, options);
+    const allNotes = await dataResponse.json();
 
-      switch (allNotes.documents.length) {
-        case 0:
-          response.status = 200;
-          response.body = {
-            success: true,
-            notesCount: allNotes.documents.length,
-            message: `No notes found for user ${bodyData.username}`,
-            data: allNotes,
-          };
-          break;      
-        default:
-          response.status = 200;
-            response.body = {
-              success: true,
-              notesCount: allNotes.documents.length,
-              data: allNotes,
-            };
-          break;
-      }
-    } catch (err) {
-      response.status = 500;
-      response.body = {
-        success: false,
-        msg: err.toString(),
-      };
+    switch (allNotes.documents.length) {
+      case 0:
+        response.status = 200;
+        response.body = {
+          success: true,
+          notesCount: allNotes.documents.length,
+          message: `No notes found for user ${bodyData.username}`,
+          data: allNotes,
+        };
+        break;
+      default:
+        response.status = 200;
+        response.body = {
+          success: true,
+          notesCount: allNotes.documents.length,
+          data: allNotes,
+        };
+        break;
     }
-    
-  };
+  } catch (err) {
+    response.status = 500;
+    response.body = {
+      success: false,
+      msg: err.toString(),
+    };
+  }
+};
 
-  export { readNotesByUsername };
+export { readNotesByUsername };

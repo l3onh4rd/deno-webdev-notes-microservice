@@ -1,10 +1,17 @@
-/** 
+/**
  * - router file for deno notes microservice api
  * - provides basic notes api routes
  */
 
 import authMiddleware from "./auth/auth_middleware.ts";
-import { createNote, deleteNote, readNote, readNotes, readNotesByUsername, updateNote } from "./controller/notes/index.ts";
+import {
+  createNote,
+  deleteNote,
+  readNote,
+  readNotes,
+  readNotesByUsername,
+  updateNote,
+} from "./controller/notes/index.ts";
 import { Router } from "./deps.ts";
 
 const router = new Router();

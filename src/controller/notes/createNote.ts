@@ -2,16 +2,21 @@
  * - route to create a note
  */
 
-import { DATA_API_KEY, BASE_URI, DATABASE, DATA_SOURCE } from "../../constants.ts";
+import {
+  BASE_URI,
+  DATA_API_KEY,
+  DATA_SOURCE,
+  DATABASE,
+} from "../../constants.ts";
 import { checkIfUuidIsTaken, generateUUID } from "../../utils/index.ts";
 
 const options = {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
-    "api-key": DATA_API_KEY 
+    "api-key": DATA_API_KEY,
   },
-  body: ""
+  body: "",
 };
 
 // @description: ADD single note
@@ -35,14 +40,14 @@ const createNote = async ({
     } else {
       const body = await request.body();
       const note = await body.value;
-      let uuid = '';
+      let uuid = "";
 
       // check for title
       if (note.notesTitle === undefined) {
         response.status = 400;
         response.body = {
           success: false,
-          message: "A title for the note is missing."
+          message: "A title for the note is missing.",
         };
         return;
       }
@@ -65,17 +70,17 @@ const createNote = async ({
         collection: params.collection,
         database: DATABASE,
         dataSource: DATA_SOURCE,
-        document: note
+        document: note,
       };
       options.body = JSON.stringify(query);
       const dataResponse = await fetch(URI, options);
       const { insertedId } = await dataResponse.json();
-                
+
       response.status = 201;
       response.body = {
         success: true,
         data: note,
-        insertedId
+        insertedId,
       };
     }
   } catch (err) {
@@ -85,7 +90,6 @@ const createNote = async ({
       msg: err.toString(),
     };
   }
-  
 };
 
 export { createNote };

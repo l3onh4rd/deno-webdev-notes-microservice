@@ -12,10 +12,15 @@ const PORT = 6886;
 const app = new Application();
 
 app.use(
-    oakCors({origin: ["http://webdevcoffe-deno-microservice.s3-website.eu-central-1.amazonaws.com"]})
+  // cors for frontend hosted via s3 bucket on aws
+  oakCors({
+    origin: [
+      "http://webdevcoffe-deno-microservice.s3-website.eu-central-1.amazonaws.com",
+    ],
+  }),
 );
 
-// use router of note controlleers
+// use note routes
 app.use(router.routes());
 app.use(router.allowedMethods());
 // use auth routes

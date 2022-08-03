@@ -6,13 +6,15 @@
 
 - updating updatedAt date on updating process
 - check for notes title (subtitle not mandatory) during creation
-- read many notes route returns now a list of notes and not a list one listed notes
+- read many notes route returns now a list of notes and not a list one listed
+  notes
 - createdAt date added
 - updatedAt date added
 
 ### Bug Fixes
 
-- updated to bcrypt lib version 0.4.0 to ensure correct validation of password hashes
+- updated to bcrypt lib version 0.4.0 to ensure correct validation of password
+  hashes
 - not returning password hash on register
 - returning http status code 404 on deleting note if note id was not found
 
