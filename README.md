@@ -20,6 +20,13 @@ file. If you are finished you can create a pull request to the integration
 branch and I will review and test it. If everything is fine I will merge it to
 the main branch and it gets deployed to the production server.
 
+## Branches
+
+Beside the main branch this repository contains an integration branch ('int').
+If you contribute please create yourself a feature branch from the integration
+branch. Please create a pull request from you feature branch to the integration
+branch. The main branch should be locked.
+
 ## Local Setup
 
 To use the services locally on your machine please make sure you have the latest
