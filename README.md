@@ -1,6 +1,6 @@
 # Deno Notes Microservice
 
-Microservice for notes data transfer. Made with Deno, MongoDB and ❤️ Test
+Microservice for notes data transfer. Made with Deno, MongoDB and ❤️
 
 ## General Description
 
