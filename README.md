@@ -24,8 +24,7 @@ the main branch and it gets deployed to the production server.
 
 Beside the main branch this repository contains an integration branch ('int').
 If you contribute please create yourself a feature branch from the integration
-branch. Please create a pull request from you feature branch to the integration
-branch. The main branch should be locked.
+branch. Please create a pull request from you feature branch to the integration branch.
 
 ## Local Setup
 
@@ -61,6 +60,10 @@ requests locally they affect the production database and the production
 deployment as well.
 
 For further details please contact me.
+
+## Releases
+
+From time to time I release a specific state of the repository as a stable version. This release will be created always from the main branch.
 
 # API documentation
 
