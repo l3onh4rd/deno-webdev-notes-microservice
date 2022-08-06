@@ -92,7 +92,7 @@ run it from the command palette. It should automatically open the api.yaml file.
 I created an Angular (v14) frontend for that API to easily use the API and play
 around with it. You can visit the UI
 [here](http://webdevcoffe-deno-microservice.s3-website.eu-central-1.amazonaws.com).
-Per default the UI is deactivated. If you would like to use it please cantact
+Per default the UI is deactivated. If you would like to use it please contact
 me.
 
 ## Deployment
