@@ -2,6 +2,11 @@
 
 ## Next Release
 
+### Updates
+
+- updated deno to v1.24.3
+- updated std to v0.152.0
+
 ## 0.1.0
 
 ### Features
