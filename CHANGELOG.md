@@ -4,6 +4,8 @@
 
 ### Updates
 
+- updated deno to v1.25.1
+- updated std to v0.154.0
 - updated deno to v1.25.0
 - updated std to v0.153.0
 - updated deno to v1.24.3
