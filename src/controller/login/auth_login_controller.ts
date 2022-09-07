@@ -104,7 +104,7 @@ async function proceedLogin(user_response: any, ctx: Context) {
     iss: String(
       user_response.document.username + user_response.document.password,
     ),
-    exp: getNumericDate(300),
+    exp: getNumericDate(3600),
   };
   // Create JWT and send it to user
   const jwt = await create(header, payload, key);
