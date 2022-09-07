@@ -16,6 +16,7 @@ app.use(
   oakCors({
     origin: [
       "http://webdevcoffe-deno-microservice.s3-website.eu-central-1.amazonaws.com",
+      "http://localhost:3000"
     ],
   }),
 );

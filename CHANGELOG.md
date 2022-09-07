@@ -1,6 +1,10 @@
 # Changelog of WebDev Notes Microservice (Deno)
 
-## Next Release
+## 0.2.0
+
+### Features
+
+- jwt token is valid for 1 hours
 
 ### Updates
 
