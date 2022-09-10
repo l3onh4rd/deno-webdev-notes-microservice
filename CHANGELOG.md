@@ -1,5 +1,12 @@
 # Changelog of WebDev Notes Microservice (Deno)
 
+## Next Release
+
+### Updates
+
+- updated deno to v1.25.2
+- updated std to v0.155.0
+
 ## 0.2.0
 
 ### Features
