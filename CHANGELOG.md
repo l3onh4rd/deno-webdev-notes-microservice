@@ -2,8 +2,14 @@
 
 ## Next Release
 
+### Features
+
+-removed deno std/bench.ts dependency
+
 ### Updates
 
+- updated deno to v1.26.1
+- updated std to v0.159.0
 - updated deno to v1.26.0
 - updated std to v0.158.0
 - updated deno to v1.25.4
