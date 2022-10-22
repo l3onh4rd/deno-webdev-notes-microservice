@@ -1,5 +1,26 @@
 # Changelog of WebDev Notes Microservice (Deno)
 
+## 0.3.0
+
+### Features
+
+-removed deno std/bench.ts dependency
+
+### Updates
+
+- updated deno to v1.26.2
+- updated std to v0.160.0
+- updated deno to v1.26.1
+- updated std to v0.159.0
+- updated deno to v1.26.0
+- updated std to v0.158.0
+- updated deno to v1.25.4
+- updated std to v0.157.0
+- updated deno to v1.25.3
+- updated std to v0.156.0
+- updated deno to v1.25.2
+- updated std to v0.155.0
+
 ## 0.2.0
 
 ### Features
