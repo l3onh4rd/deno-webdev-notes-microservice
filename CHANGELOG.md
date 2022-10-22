@@ -1,6 +1,6 @@
 # Changelog of WebDev Notes Microservice (Deno)
 
-## Next Release
+## 0.3.0
 
 ### Features
 
