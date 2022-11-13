@@ -19,5 +19,5 @@ export {
 export type { Header, Payload } from "https://deno.land/x/djwt@v2.4/mod.ts";
 
 // deno std dependencies
-export { v4 } from "https://deno.land/std@0.162.0/uuid/mod.ts";
-export * as t from "https://deno.land/std@0.162.0/testing/asserts.ts";
+export { v4 } from "https://deno.land/std@0.163.0/uuid/mod.ts";
+export * as t from "https://deno.land/std@0.163.0/testing/asserts.ts";
