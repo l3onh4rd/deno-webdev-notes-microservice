@@ -4,6 +4,6 @@
     "loadDep": "deno cache --lock=json src/deps.ts",
     "start": "deno run -A ./src/server.ts",
     "test": "deno test -A",
-    "benchmark": "deno bench --unstable --allow-env src/benchmark/benchmark.ts"
+    "benchmark": "deno bench --allow-env src/benchmark/benchmark.ts"
   }
 }
