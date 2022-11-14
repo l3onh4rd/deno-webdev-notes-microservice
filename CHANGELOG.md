@@ -4,8 +4,13 @@
 
 ### Features
 
+- added deno.lock file
+- bench command is stable
+
 ### Updates
 
+- updated deno to v1.28.0
+- updated std to v0.164.0
 - updated deno to v1.27.2
 - updated std to v0.163.0
 - updated deno to v1.27.1
