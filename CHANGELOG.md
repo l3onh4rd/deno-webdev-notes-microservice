@@ -6,23 +6,12 @@
 
 - added deno.lock file
 - bench command is stable
+- refined permissons for start and test task
 
 ### Updates
 
-- updated deno to v1.29.1
-- updated std to v0.170.0
-- updated deno to v1.28.3
-- updated std to v0.167.0
-- updated deno to v1.28.2
-- updated std to v0.166.0
-- updated deno to v1.28.1
-- updated std to v0.165.0
-- updated deno to v1.28.0
-- updated std to v0.164.0
-- updated deno to v1.27.2
-- updated std to v0.163.0
-- updated deno to v1.27.1
-- updated std to v0.162.0
+- updated deno to v1.27.1 -> v1.29.1
+- updated std v0.162.0 -> v0.170.0 
 
 ## 0.3.0
 
