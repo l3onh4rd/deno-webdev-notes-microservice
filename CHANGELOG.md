@@ -7,6 +7,7 @@
 - added deno.lock file
 - bench command is stable
 - refined permissons for start and test task
+- added execute task to create exetuable file (added file to git ignore as well)
 
 ### Updates
 
