@@ -4,6 +4,7 @@
     "loadDep": "deno cache --lock=json src/deps.ts",
     "start": "deno run --allow-env --allow-net ./src/server.ts",
     "test": "deno test --allow-env --allow-net",
-    "benchmark": "deno bench --allow-env src/benchmark/benchmark.ts"
+    "benchmark": "deno bench --allow-env src/benchmark/benchmark.ts",
+    "execute": "deno compile --allow-net --allow-env ./src/server.ts"
   }
 }
