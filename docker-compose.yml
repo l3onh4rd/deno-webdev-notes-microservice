@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    container_name: deno-notes-container
+    image: deno-notes-image
+    ports:
+      - "6886:6886"
