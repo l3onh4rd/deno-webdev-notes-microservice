@@ -10,6 +10,7 @@ import {
 } from "../../constants.ts";
 import { bcrypt } from "../../deps.ts";
 import { checkIfUsernamIsTaken } from "../../utils/index.ts";
+import { validatePassword,validateUsername } from "../../utils/login/loginValidation.ts";
 
 const options = {
   method: "POST",
@@ -40,6 +41,28 @@ const register = async ({
       const body = await request.body();
       const user = await body.value;
       const URI = `${BASE_URI}/insertOne`;
+
+      // validate pattern of password
+
+      if (!validatePassword(user.password)) {
+        response.status = 409;
+        response.body = {
+          success: false,
+          message: "Password pattern is invalid.",
+        };
+        return;
+      }
+
+      // validate pattern of username
+
+      if (!validateUsername(user.username)) {
+        response.status = 409;
+        response.body = {
+          success: false,
+          message: "Username pattern is invalid.",
+        };
+        return;
+      }
 
       // get hash password and save hash
       user.password = bcrypt.hashSync(

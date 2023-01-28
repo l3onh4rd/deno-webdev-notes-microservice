@@ -2,8 +2,8 @@
  * test file for uuids
  */
 
-import { t, v4 } from "../../../deps.ts";
-import { generateUUID } from "../../../utils/index.ts";
+import { t, v4 } from "../deps.ts";
+import { generateUUID } from "../utils/index.ts";
 
 Deno.test("test generateUUID function", () => {
   const actual = generateUUID();
