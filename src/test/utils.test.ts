@@ -2,8 +2,8 @@
  * test file for util functions
  */
 
-import { t } from "../../../deps.ts";
-import { checkIfUsernamIsTaken } from "../../../utils/index.ts";
+import { t } from "../deps.ts";
+import { checkIfUsernamIsTaken } from "../utils/index.ts";
 
 Deno.test("test checkIfUsernamIsTaken utils function, should return true for existing user", async () => {
   const expected = true;

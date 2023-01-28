@@ -8,11 +8,13 @@
 - bench command is stable
 - refined permissons for start and test task
 - added execute task to create exetuable file (added file to git ignore as well)
+- Username pattern validation - min. 8 characters, max. 30 characters, only alphanumeric values
+- Password pattern validation - min. 12 characters, max. 64 characters, only alphanumeric values and ! " § % & / ( ) = ? : ; -
 
 ### Updates
 
-- updated deno to v1.27.1 -> v1.29.4
-- updated std v0.162.0 -> v0.173.0 
+- updated deno to v1.27.1 -> v1.30.0
+- updated std v0.162.0 -> v0.175.0 
 
 ## 0.3.0
 
