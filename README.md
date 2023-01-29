@@ -2,6 +2,23 @@
 
 Microservice for notes data transfer. Made with Deno, MongoDB and ❤️
 
+## Table of Contents
+
+- [Deno Notes Microservice](#deno-notes-microservice)
+  - [General Description](#general-description)
+  - [Contribution](#contribution)
+  - [Branches](#branches)
+  - [Local Setup](#local-setup)
+  - [Deno task commands](#deno-task-commands)
+  - [Deployment](#deployment)
+  - [Releases](#releases)
+- [API documentation](#api-documentation)
+  - [Postaman](#postman)
+  - [Open API](#openapi)
+- [Frontend](#frontend)
+  - [General Information](#general-information)
+  - [Deployment](#deployment-1)
+
 ## General Description
 
 This Microservice provides an API to create, read, update and delete Notes.
@@ -39,15 +56,19 @@ the application described in the next step.
 ## Deno task commands
 
 Deno tasks are prewritten commands in the deno.json file to avoid typing long
-commands again and again. Currently 5 tasks are available. Please run them
-always from the root folder.
+commands again and again. Please run them from the root folder.
 
-- deno task start: starts the application on localhost:6886
-- deno task test: runs all tests of the project
-- deno task updateDep: updates all dependencies integrated in the deps.ts file
-  and caches them locally
-- deno task loadDep: loads all dependencies from the lock.json file
-- deno task benchmark: runs benchmarks
+Task name | Info | Command
+--- | --- | ---
+`start` | starts the application on localhost:6886 | deno run --allow-env --allow-net ./src/server.ts
+`test` | runs all tests of the project | deno test --allow-env --allow-net
+`updateDep` | Updates dependencies from deps.ts file and caches them locally | deno cache --lock=lock.json --lock-write src/deps.ts
+`loadDep` | Loads dependencies and caches them locally | deno cache --lock=json src/deps.ts
+`benchmark` | runs benchmarks | deno bench --allow-env src/benchmark/benchmark.ts
+`executable-win` | Creates executable file for Windows | deno compile --target=x86_64-pc-windows-msvc --allow-net --allow-env ./src/server.ts
+`executable-apple` | Creates executable file for Apple x86 architecture | deno compile --target=x86_64-apple-darwin --allow-net --allow-env ./src/server.ts
+`executable-apple-arm` | Creates executable file for Apple arm architecture | deno compile --target=aarch64-apple-darwin --allow-net --allow-env ./src/server.ts
+`executable-linux` | Creates executable file for Linux | deno compile --target=x86_64-unknown-linux-gnu --allow-net --allow-env ./src/server.ts
 
 ## Deployment
 
