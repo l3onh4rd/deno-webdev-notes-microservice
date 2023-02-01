@@ -4,7 +4,7 @@
  * - integrates notes api und user api routes
  */
 
-import { router, auth_router } from "./routes.ts";
+import { auth_router, router } from "./routes.ts";
 import { Application, oakCors } from "./deps.ts";
 
 const PORT = 6886;

@@ -9,7 +9,10 @@ import {
   DATABASE_USER,
 } from "../../constants.ts";
 import { checkIfUsernamIsTaken } from "../../utils/index.ts";
-import { validatePassword,validateUsername } from "../../utils/login/loginValidation.ts";
+import {
+  validatePassword,
+  validateUsername,
+} from "../../utils/login/loginValidation.ts";
 
 const options = {
   method: "POST",

@@ -8,6 +8,6 @@
     "executable-win": "deno compile --target=x86_64-pc-windows-msvc --allow-net --allow-env ./src/server.ts",
     "executable-apple": "deno compile --target=x86_64-apple-darwin --allow-net --allow-env ./src/server.ts",
     "executable-apple-arm": "deno compile --target=aarch64-apple-darwin --allow-net --allow-env ./src/server.ts",
-    "executable-linux": "deno compile --target=x86_64-unknown-linux-gnu --allow-net --allow-env ./src/server.ts"  
+    "executable-linux": "deno compile --target=x86_64-unknown-linux-gnu --allow-net --allow-env ./src/server.ts"
   }
 }
