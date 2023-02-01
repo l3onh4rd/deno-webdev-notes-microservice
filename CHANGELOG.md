@@ -5,6 +5,8 @@
 ### Features
 
 - added deno.lock file
+- removed lock.json file (replaced by deno.lock file)
+- adapted loadDep and updateDep task accordingly to the new deno.lock file
 - bench command is stable
 - refined permissons for start and test task
 - added execute task to create exetuable file (added file to git ignore as well)
