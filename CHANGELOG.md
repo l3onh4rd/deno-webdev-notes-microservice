@@ -5,13 +5,14 @@
 ### Features
 
 - added deno.lock file
-- removed lock.json file (replaced by deno.lock file)
-- adapted loadDep and updateDep task accordingly to the new deno.lock file
+- removed lock.json file (replaced by deno.lock file) ([Issue 31](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/31))
+- adapted loadDep and updateDep task accordingly to the new deno.lock file ([Issue 31](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/31))
 - bench command is stable
-- refined permissons for start and test task
-- added execute task to create exetuable file (added file to git ignore as well)
-- Username pattern validation - min. 8 characters, max. 30 characters, only alphanumeric values
-- Password pattern validation - min. 12 characters, max. 64 characters, only alphanumeric values and ! " § % & / ( ) = ? : ; -
+- refined permissons for start and test task ([Issue 4](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/4))
+- added execute task to create exetuable file (added file to git ignore as well) ([Issue 33](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/33))
+- combined auth and notes router in one file, use auth middleware generally for notes router ([Issue 34](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/34))
+- Username pattern validation - min. 8 characters, max. 30 characters, only alphanumeric values ([Issue 35](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/35)) ([Issue 40](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/40)) ([Issue 41](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/41))
+- Password pattern validation - min. 12 characters, max. 64 characters, only alphanumeric values and ! " § % & / ( ) = ? : ; - ([Issue 35](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/35)) ([Issue 40](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/40)) ([Issue 41](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/41))
 
 ### Updates
 
