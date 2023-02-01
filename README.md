@@ -10,6 +10,7 @@ Microservice for notes data transfer. Made with Deno, MongoDB and ❤️
   - [Branches](#branches)
   - [Local Setup](#local-setup)
   - [Deno task commands](#deno-task-commands)
+  - [Dependency Management](#dependency-managment)
   - [Deployment](#deployment)
   - [Releases](#releases)
 - [API documentation](#api-documentation)
@@ -50,7 +51,7 @@ version of deno installed ([check latest version here](https://deno.land/)).
 Check the latest changelog entry about the last deno update as well. To access
 the database locally you have to setup environment variables. Please contact me
 to get them. If you perform requests locally always keep in mind that you
-perform requests to the production database. Use the deno task commands to start
+perform requests to the production database. To cache all dependencies (similar to npm/yarn install) run the loadDep task or check the related [chapter](#dependency-management). Use the deno task commands to start
 the application described in the next step.
 
 ## Deno task commands
@@ -69,6 +70,10 @@ Task name | Info | Command
 `executable-apple` | Creates executable file for Apple x86 architecture | deno compile --target=x86_64-apple-darwin --allow-net --allow-env ./src/server.ts
 `executable-apple-arm` | Creates executable file for Apple arm architecture | deno compile --target=aarch64-apple-darwin --allow-net --allow-env ./src/server.ts
 `executable-linux` | Creates executable file for Linux | deno compile --target=x86_64-unknown-linux-gnu --allow-net --allow-env ./src/server.ts
+
+## Dependency Management
+
+Although Deno always raves about not having to worry about modules or that there is no node_modules folder, some dependency management still needs to be done. All dependencies are specified in the deps.ts file (src/deps.ts) and imported from there into the respective files. The advantage is that all dependencies are in one place and can be managed centrally. Since version 1.29, the deno.lock file is marked as stable and is automatically created when the cache, run or test command is executed. To ensure that every developer uses the same dependencies, the deno.lock file is also pushed to the repository. To update the deno.lock file, simply run the cache, run, or test command. However, a preconfigured command (deno task updateDep) is provided to update the deno.lock file. To initially load the correct dependencies, the deno task loadDep command can be used. The Deno runtime caches all dependencies and manages them on the machine automatically.
 
 ## Deployment
 
