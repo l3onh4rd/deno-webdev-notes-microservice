@@ -64,6 +64,7 @@ commands again and again. Please run them from the root folder.
 
 | Task name              | Info                                                           | Command                                                                                |
 | ---------------------- | -------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `update`               | upgrades to latest deno release                                | deno upgrade                                                                           |
 | `start`                | starts the application on localhost:6886                       | deno run --allow-env --allow-net ./src/server.ts                                       |
 | `test`                 | runs all tests of the project                                  | deno test --allow-env --allow-net                                                      |
 | `updateDep`            | Updates dependencies from deps.ts file and caches them locally | deno cache --lock=lock.json --lock-write src/deps.ts                                   |
