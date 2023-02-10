@@ -7,7 +7,7 @@ import {
   DATA_API_KEY,
   DATA_SOURCE,
   DATABASE_USER,
-} from "../../constants.ts";
+} from "../constants.ts";
 
 const options = {
   method: "POST",

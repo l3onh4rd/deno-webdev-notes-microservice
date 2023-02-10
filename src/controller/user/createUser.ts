@@ -10,10 +10,7 @@ import {
 } from "../../constants.ts";
 import { bcrypt } from "../../deps.ts";
 import { checkIfUsernamIsTaken } from "../../utils/index.ts";
-import {
-  validatePassword,
-  validateUsername,
-} from "../../utils/login/loginValidation.ts";
+import { validatePassword, validateUsername } from "../../utils/index.ts";
 
 const options = {
   method: "POST",
