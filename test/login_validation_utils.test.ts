@@ -1,8 +1,5 @@
-import { t } from "../deps.ts";
-import {
-  validatePassword,
-  validateUsername,
-} from "../utils/login/loginValidation.ts";
+import { t } from "../src/deps.ts";
+import { validatePassword, validateUsername } from "../src/utils/index.ts";
 
 Deno.test("test usernameValidation utils function, should return true for valid username", (): void => {
   const actual: boolean = validateUsername("Username");

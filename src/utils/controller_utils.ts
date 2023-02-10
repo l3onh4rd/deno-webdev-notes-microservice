@@ -2,12 +2,7 @@
  * - function to check if a uuid is already taken during creation process of a note
  */
 
-import {
-  BASE_URI,
-  DATA_API_KEY,
-  DATA_SOURCE,
-  DATABASE,
-} from "../../constants.ts";
+import { BASE_URI, DATA_API_KEY, DATA_SOURCE, DATABASE } from "../constants.ts";
 
 const options = {
   method: "POST",

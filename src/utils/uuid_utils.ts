@@ -2,7 +2,7 @@
  * - function to generate a uuid
  */
 
-import { v4 } from "../../deps.ts";
+import { v4 } from "../deps.ts";
 
 function generateUUID(): string {
   const uuid = crypto.randomUUID();
