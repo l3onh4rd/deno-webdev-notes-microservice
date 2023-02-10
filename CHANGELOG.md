@@ -5,6 +5,8 @@
 ### Features
 
 - added deno.lock file
+- added "deno task update" (performs deno upgrade) to avoid confusion with deno
+  upgrade
 - removed lock.json file (replaced by deno.lock file)
   ([Issue 31](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/31))
 - adapted loadDep and updateDep task accordingly to the new deno.lock file
