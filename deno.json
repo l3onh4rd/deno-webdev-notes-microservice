@@ -5,6 +5,7 @@
     "loadDep": "deno cache --lock=deno.lock src/deps.ts",
     "start": "deno run --allow-env --allow-net ./src/server.ts",
     "test": "deno test --allow-env --allow-net",
+    "test-coverage": "deno test --allow-env --allow-net --coverage=coverage_files;deno coverage coverage_files --lcov --output=coverage.lcov",
     "benchmark": "deno bench --allow-env src/benchmark/benchmark.ts",
     "executable-win": "deno compile --target=x86_64-pc-windows-msvc --allow-net --allow-env ./src/server.ts",
     "executable-apple": "deno compile --target=x86_64-apple-darwin --allow-net --allow-env ./src/server.ts",

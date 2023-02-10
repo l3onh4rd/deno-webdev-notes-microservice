@@ -29,6 +29,8 @@
   ([Issue 35](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/35))
   ([Issue 40](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/40))
   ([Issue 41](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/41))
+- added coverage report command to generate lcov report file
+  ([Issue 55](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/55))
 
 ### Updates
 
