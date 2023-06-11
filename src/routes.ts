@@ -22,6 +22,7 @@ import {
   updateUser,
 } from "./controller/user/index.ts";
 import { Router } from "./deps.ts";
+import { createKvNote, deleteKvNote, readKvNote, readKvNotes, updateKvNote } from "./controller/kv_notes/index.ts";
 
 const router = new Router();
 router.use(authMiddleware);
@@ -34,6 +35,17 @@ router
   .put("/api/notes/:collection/:id", updateNote) // Update a note
   .delete("/api/notes/:collection/:id", deleteNote); // Delete a note
 
+const kv_router = new Router();
+kv_router.use(authMiddleware);
+
+kv_router
+  .post("/api/kv/note/:collection", createKvNote) // Add a note
+  .get("/api/kv/notes/:collection", readKvNotes) // Get all notes
+  // .post("/api/kv/notes/:collection", readKvNotesByUsername) // currently not implemented // Get all notes by username
+  .get("/api/kv/notes/:collection/:id", readKvNote) // Get one note
+  .put("/api/kv/notes/:collection/:id", updateKvNote) // Update a note
+  .delete("/api/kv/note", deleteKvNote); // Delete a note
+
 const auth_router = new Router();
 
 auth_router
@@ -44,4 +56,4 @@ auth_router
   .delete("/api/user/:username", authMiddleware, deleteUser) // Delete a user
   .put("/api/user/:username", authMiddleware, updateUser); // Update a user
 
-export { auth_router, router };
+export { auth_router, router, kv_router };
