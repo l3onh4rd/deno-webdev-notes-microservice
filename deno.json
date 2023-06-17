@@ -4,6 +4,7 @@
     "updateDep": "deno cache --lock=deno.lock --lock-write src/deps.ts",
     "loadDep": "deno cache --lock=deno.lock src/deps.ts",
     "start": "deno run --allow-env --allow-net ./src/server.ts",
+    "start-unstable": "deno run --unstable --allow-env --allow-net ./src/server.ts",
     "test": "deno test --allow-env --allow-net",
     "test-coverage": "deno test --allow-env --allow-net --coverage=coverage_files;deno coverage coverage_files --lcov --output=coverage.lcov",
     "benchmark": "deno bench --allow-env src/benchmark/benchmark.ts",

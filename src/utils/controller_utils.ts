@@ -34,4 +34,19 @@ async function checkIfUuidIsTaken(
   }
 }
 
-export { checkIfUuidIsTaken };
+async function checkKvIfUuidIsTaken(
+  uuid: string,
+  collection: string,
+): Promise<boolean> {
+  const kv = await Deno.openKv();
+
+  const result = await kv.get([collection, uuid]);
+
+  if (result.value === null) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+export { checkIfUuidIsTaken, checkKvIfUuidIsTaken };

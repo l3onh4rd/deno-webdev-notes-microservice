@@ -1,6 +1,6 @@
 # Changelog of WebDev Notes Microservice (Deno)
 
-## Next Release
+## 0.4.0
 
 ### Features
 
@@ -31,10 +31,13 @@
   ([Issue 41](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/41))
 - added coverage report command to generate lcov report file
   ([Issue 55](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/55))
+- added api to create, read, read all, update and delte notes with Deno KV as
+  database
+  ([Issue 70](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/70))
 
 ### Updates
 
-- updated deno to v1.27.1 -> v1.34.3
+- updated deno v1.27.1 -> v1.34.3
 - updated std v0.162.0 -> v0.192.0
 
 ## 0.3.0

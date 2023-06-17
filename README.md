@@ -11,6 +11,7 @@ Microservice for notes data transfer. Made with Deno, MongoDB and ❤️
   - [Local Setup](#local-setup)
   - [Deno task commands](#deno-task-commands)
   - [Dependency Management](#dependency-managment)
+  - [Database(s)](#database(s))
   - [Deployment](#deployment)
   - [Releases](#releases)
 - [API documentation](#api-documentation)
@@ -65,7 +66,8 @@ commands again and again. Please run them from the root folder.
 | Task name              | Info                                                                                                                                                                                                                                                                                                       | Command                                                                                                                |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | `update`               | upgrades to latest deno release                                                                                                                                                                                                                                                                            | deno upgrade                                                                                                           |
-| `start`                | starts the application on localhost:6886                                                                                                                                                                                                                                                                   | deno run --allow-env --allow-net ./src/server.ts                                                                       |
+| `start`                | starts the application on localhost:6886                                                                                                                                                                                                                                                                   | deno run --unstable --allow-env --allow-net ./src/server.ts                                                            |
+| `start-unstable`       | starts the application on localhost:6886 with unstable flag to use unstable features                                                                                                                                                                                                                       | deno run --allow-env --allow-net ./src/server.ts                                                                       |
 | `test`                 | runs all tests of the project                                                                                                                                                                                                                                                                              | deno test --allow-env --allow-net                                                                                      |
 | `test-coverage`        | Generates a test coverage report with coverage files in the coverage_files folder. Then a coverage report file (lcov) is generated. You can process that file with tools like genhtml or online visualization tools. Those files are added to the gitignore and shouldn't be committet to this repository. | deno test --allow-env --allow-net --coverage=coverage_files;deno coverage coverage_files --lcov --output=coverage.lcov |
 | `updateDep`            | Updates dependencies from deps.ts file and caches them locally                                                                                                                                                                                                                                             | deno cache --lock=lock.json --lock-write src/deps.ts                                                                   |
@@ -92,6 +94,15 @@ file. To initially load the correct dependencies, the deno task loadDep command
 can be used. The Deno runtime caches all dependencies and manages them on the
 machine automatically.
 
+## Database(s)
+
+The notes service uses a Mongo DB Atlas instance deployed with AWS. With the
+introduction of Deno KV a new API was introduced to us create, read, read all,
+update and delete Notes on a Deno KV instance. Therefore you can use two
+different databases depending on which API routes you are using.
+
+At the moment the user management is only handled by the Mongo DB database.
+
 ## Deployment
 
 The server is deployed via Deno Deploy. If changes are pushed to the main branch
@@ -113,13 +124,18 @@ version. This release will be created always from the main branch.
 
 ## Postman
 
-Use the 'Deno Notes Microservice.postman_collection.json' file from the root
-folder to import it inside postman and you can perform requests easily to your
-local running server or to the production server. The local requests are ending
-with '(local)'. The production requets are ending with '(Deployment)'. Make sure
-you login with a valid user before you start. You could create one via the User
-Api. These request are only for local use. Your JWT token is valid for 5
-minutes.
+Use the .postman_collection.json files from the root folder to import it inside
+postman and you can perform requests easily to your local running server or to
+the production server. The local requests are ending with '(local)'. The
+production requets are ending with '(Deployment)'. Make sure you login with a
+valid user before you start. You could create one via the User Api. These
+request are only for local use. Your JWT token is valid for 60 minutes. There
+are 4 collections.
+
+- Local and Mongo DB database
+- Local and Deno KV database
+- Production server and Mongo DB database
+- Production server and Deno KV database
 
 ## OpenAPI
 

@@ -4,7 +4,7 @@
  * - integrates notes api und user api routes
  */
 
-import { auth_router, router } from "./routes.ts";
+import { auth_router, kv_router, router } from "./routes.ts";
 import { Application, oakCors } from "./deps.ts";
 
 const PORT = 6886;
@@ -22,6 +22,9 @@ app.use(
 // use note routes
 app.use(router.routes());
 app.use(router.allowedMethods());
+// use kv routes
+app.use(kv_router.routes());
+app.use(kv_router.allowedMethods());
 // use auth routes
 app.use(auth_router.routes());
 app.use(auth_router.allowedMethods());
