@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "592dc534-2c54-44ad-8f9e-ee58be89b2da",
+		"name": "Deno Notes Mircoservice (Deno Deploy)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17162627"
+	},
+	"item": [
+		{
+			"name": "# Login (Deployment)",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"\",\r\n    \"password\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://web-dev-coffee-deno.deno.dev/api/user/login",
+					"protocol": "https",
+					"host": [
+						"web-dev-coffee-deno",
+						"deno",
+						"dev"
+					],
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Note (Deployment)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Leonhard\",\r\n    \"notesTitle\": \"Test Titel\",\r\n    \"notesSubTitle\": \"Test Sub Titel\",\r\n    \"note\": {\r\n        \"Test\": \"Test\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://web-dev-coffee-deno.deno.dev/api/note/basic_notes",
+					"protocol": "https",
+					"host": [
+						"web-dev-coffee-deno",
+						"deno",
+						"dev"
+					],
+					"path": [
+						"api",
+						"note",
+						"basic_notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Notes (Deployment)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://web-dev-coffee-deno.deno.dev/api/notes/basic_notes",
+					"protocol": "https",
+					"host": [
+						"web-dev-coffee-deno",
+						"deno",
+						"dev"
+					],
+					"path": [
+						"api",
+						"notes",
+						"basic_notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get My Notes (Deployment)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Leonhard\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://web-dev-coffee-deno.deno.dev/api/notes/basic_notes",
+					"protocol": "https",
+					"host": [
+						"web-dev-coffee-deno",
+						"deno",
+						"dev"
+					],
+					"path": [
+						"api",
+						"notes",
+						"basic_notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Note (Deployment)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://web-dev-coffee-deno.deno.dev/api/notes/basic_notes/9107004d-2fec-4139-b78c-dc1de7b6220e",
+					"protocol": "https",
+					"host": [
+						"web-dev-coffee-deno",
+						"deno",
+						"dev"
+					],
+					"path": [
+						"api",
+						"notes",
+						"basic_notes",
+						"9107004d-2fec-4139-b78c-dc1de7b6220e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Note (Deployment)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"note\": {\r\n        \"Update 2\": \"Update 2\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://web-dev-coffee-deno.deno.dev/api/notes/basic_notes/9107004d-2fec-4139-b78c-dc1de7b6220e",
+					"protocol": "https",
+					"host": [
+						"web-dev-coffee-deno",
+						"deno",
+						"dev"
+					],
+					"path": [
+						"api",
+						"notes",
+						"basic_notes",
+						"9107004d-2fec-4139-b78c-dc1de7b6220e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Note (Deployment)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://web-dev-coffee-deno.deno.dev/api/notes/basic_notes/b063c93a-505c-42ac-9e2f-0fc295b41f36",
+					"protocol": "https",
+					"host": [
+						"web-dev-coffee-deno",
+						"deno",
+						"dev"
+					],
+					"path": [
+						"api",
+						"notes",
+						"basic_notes",
+						"b063c93a-505c-42ac-9e2f-0fc295b41f36"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

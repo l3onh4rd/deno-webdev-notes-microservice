@@ -1,5 +1,5 @@
 /**
- * - export all note routes
+ * - export all kv note routes
  */
 
 export { createKvNote } from "./createKvNote.ts";

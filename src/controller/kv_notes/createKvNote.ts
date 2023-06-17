@@ -1,5 +1,5 @@
 /**
- * - route to create a note
+ * - route to create a note with Deno KV
  */
 
 import { checkKvIfUuidIsTaken } from "../../utils/controller_utils.ts";

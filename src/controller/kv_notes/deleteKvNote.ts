@@ -1,5 +1,5 @@
 /**
- * - route to delete one note
+ * - route to delete one note with Deno KV
  */
 
 // @description: DELETE single note

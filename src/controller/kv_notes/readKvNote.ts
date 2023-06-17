@@ -1,5 +1,5 @@
 /**
- * - route to get one note by id
+ * - route to get one note by id with Deno KV
  */
 
 // @description: GET single note

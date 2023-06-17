@@ -1,5 +1,5 @@
 /**
- * - route to read all notes by collection
+ * - route to read all notes by collection with Deno KV
  */
 
 // @description: GET all notes

@@ -16,7 +16,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Leonhard\",\r\n    \"password\": \"\"\r\n}",
+					"raw": "{\r\n    \"username\": \"\",\r\n    \"password\": \"\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -29,40 +29,6 @@
 						"localhost"
 					],
 					"port": "6886",
-					"path": [
-						"api",
-						"user",
-						"login"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "# Login (Deployment)",
-			"request": {
-				"auth": {
-					"type": "bearer"
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Leonhard\",\r\n    \"password\": \"\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://web-dev-coffee-deno.deno.dev/api/user/login",
-					"protocol": "https",
-					"host": [
-						"web-dev-coffee-deno",
-						"deno",
-						"dev"
-					],
 					"path": [
 						"api",
 						"user",
@@ -89,7 +55,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Leonhard\",\r\n    \"notesTitle\": \"Test Titel\",\r\n    \"notesSubTitle\": \"Test Sub Titel\",\r\n    \"note\": {\r\n        \"Test\": 2,\r\n        \"Notiz 1\": \"Meine zweite Notiz\"\r\n    }\r\n}",
+					"raw": "{\r\n    \"username\": \"Developer\",\r\n    \"notesTitle\": \"Note\",\r\n    \"notesSubTitle\": \"Developer Note\",\r\n    \"note\": {\r\n        \"test\": 1,\r\n        \"Note 1\": \"test note\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -158,7 +124,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Leonhard\"\r\n}",
+					"raw": "{\r\n    \"username\": \"Developer\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -283,228 +249,6 @@
 			"response": []
 		},
 		{
-			"name": "Add Note (Deployment)",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Leonhard\",\r\n    \"notesTitle\": \"Test Titel\",\r\n    \"notesSubTitle\": \"Test Sub Titel\",\r\n    \"note\": {\r\n        \"Test\": \"Test\"\r\n    }\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://web-dev-coffee-deno.deno.dev/api/note/basic_notes",
-					"protocol": "https",
-					"host": [
-						"web-dev-coffee-deno",
-						"deno",
-						"dev"
-					],
-					"path": [
-						"api",
-						"note",
-						"basic_notes"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Notes (Deployment)",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://web-dev-coffee-deno.deno.dev/api/notes/basic_notes",
-					"protocol": "https",
-					"host": [
-						"web-dev-coffee-deno",
-						"deno",
-						"dev"
-					],
-					"path": [
-						"api",
-						"notes",
-						"basic_notes"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get My Notes (Deployment)",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Leonhard\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://web-dev-coffee-deno.deno.dev/api/notes/basic_notes",
-					"protocol": "https",
-					"host": [
-						"web-dev-coffee-deno",
-						"deno",
-						"dev"
-					],
-					"path": [
-						"api",
-						"notes",
-						"basic_notes"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Read Note (Deployment)",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://web-dev-coffee-deno.deno.dev/api/notes/basic_notes/9107004d-2fec-4139-b78c-dc1de7b6220e",
-					"protocol": "https",
-					"host": [
-						"web-dev-coffee-deno",
-						"deno",
-						"dev"
-					],
-					"path": [
-						"api",
-						"notes",
-						"basic_notes",
-						"9107004d-2fec-4139-b78c-dc1de7b6220e"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Note (Deployment)",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"note\": {\r\n        \"Update 2\": \"Update 2\"\r\n    }\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://web-dev-coffee-deno.deno.dev/api/notes/basic_notes/9107004d-2fec-4139-b78c-dc1de7b6220e",
-					"protocol": "https",
-					"host": [
-						"web-dev-coffee-deno",
-						"deno",
-						"dev"
-					],
-					"path": [
-						"api",
-						"notes",
-						"basic_notes",
-						"9107004d-2fec-4139-b78c-dc1de7b6220e"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete Note (Deployment)",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "https://web-dev-coffee-deno.deno.dev/api/notes/basic_notes/b063c93a-505c-42ac-9e2f-0fc295b41f36",
-					"protocol": "https",
-					"host": [
-						"web-dev-coffee-deno",
-						"deno",
-						"dev"
-					],
-					"path": [
-						"api",
-						"notes",
-						"basic_notes",
-						"b063c93a-505c-42ac-9e2f-0fc295b41f36"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Register User (Local)",
 			"request": {
 				"auth": {
@@ -521,7 +265,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Leonhard2\",\r\n    \"password\": \"\"\r\n}",
+					"raw": "{\r\n    \"username\": \"\",\r\n    \"password\": \"\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -529,8 +273,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:6886/api/user/register",
-					"protocol": "http",
+					"raw": "localhost:6886/api/user/register",
 					"host": [
 						"localhost"
 					],
@@ -622,7 +365,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Leonhard3\"\r\n}",
+					"raw": "{\r\n    \"username\": \"user\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -630,7 +373,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:6886/api/user/Leonhard2",
+					"raw": "localhost:6886/api/user/user",
 					"host": [
 						"localhost"
 					],
@@ -660,7 +403,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:6886/api/user/Leonhard3",
+					"raw": "localhost:6886/api/user/username",
 					"host": [
 						"localhost"
 					],
@@ -668,7 +411,7 @@
 					"path": [
 						"api",
 						"user",
-						"Leonhard3"
+						"username"
 					]
 				}
 			},

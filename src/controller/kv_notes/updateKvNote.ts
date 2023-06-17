@@ -1,5 +1,5 @@
 /**
- * - implementation of put/update route for a note by id
+ * - implementation of put/update route for a note by id with Deno KV
  */
 
 // @description: UPDATE single note
