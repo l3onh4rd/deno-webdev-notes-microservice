@@ -26,7 +26,7 @@ const updateKvNote = async ({
       .check(oldNote)
       .set([params.collection, params.id, note.username], note)
       .commit();
-        
+
     if (ok) {
       response.status = 200;
       response.body = {
@@ -36,7 +36,7 @@ const updateKvNote = async ({
       response.status = 500;
       response.body = {
         success: false,
-        msg: "Something went wrong."
+        msg: "Something went wrong.",
       };
     }
   } catch (err) {

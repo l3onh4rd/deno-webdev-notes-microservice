@@ -22,7 +22,13 @@ import {
   updateUser,
 } from "./controller/user/index.ts";
 import { Router } from "./deps.ts";
-import { createKvNote, deleteKvNote, readKvNote, readKvNotes, updateKvNote } from "./controller/kv_notes/index.ts";
+import {
+  createKvNote,
+  deleteKvNote,
+  readKvNote,
+  readKvNotes,
+  updateKvNote,
+} from "./controller/kv_notes/index.ts";
 
 const router = new Router();
 router.use(authMiddleware);
@@ -56,4 +62,4 @@ auth_router
   .delete("/api/user/:username", authMiddleware, deleteUser) // Delete a user
   .put("/api/user/:username", authMiddleware, updateUser); // Update a user
 
-export { auth_router, router, kv_router };
+export { auth_router, kv_router, router };

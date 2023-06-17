@@ -12,7 +12,6 @@ const deleteKvNote = async ({
   response: any;
 }) => {
   try {
-
     const body = await request.body();
     const bodyData = await body.value;
 
@@ -20,18 +19,22 @@ const deleteKvNote = async ({
 
     await kv.delete([bodyData.collection, bodyData.id, bodyData.username]);
 
-    const result = await kv.get([bodyData.collection, bodyData.id, bodyData.username]);
+    const result = await kv.get([
+      bodyData.collection,
+      bodyData.id,
+      bodyData.username,
+    ]);
 
     if (result.value === null) {
       response.status = 200;
       response.body = {
-        success: true
+        success: true,
       };
     } else {
       response.status = 404;
       response.body = {
         success: false,
-        message: "No note was deleted"
+        message: "No note was deleted",
       };
     }
   } catch (err) {

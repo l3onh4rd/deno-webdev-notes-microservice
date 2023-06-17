@@ -53,8 +53,8 @@ const createKvNote = async ({
       const date = Date.now();
       note.createdAt = date;
       note.updatedAt = date;
-      
-      await kv.set([params.collection, uuid, note.username], note); 
+
+      await kv.set([params.collection, uuid, note.username], note);
 
       response.status = 201;
       response.body = {

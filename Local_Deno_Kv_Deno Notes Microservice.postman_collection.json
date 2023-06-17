@@ -1,237 +1,237 @@
 {
-	"info": {
-		"_postman_id": "a6feb275-7d94-46a5-8f13-bb7fa902f180",
-		"name": "Kv Deno Notes Microservice",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "17162627"
-	},
-	"item": [
-		{
-			"name": "# Login",
-			"request": {
-				"auth": {
-					"type": "bearer"
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"\",\r\n    \"password\": \"\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:6886/api/user/login",
-					"host": [
-						"localhost"
-					],
-					"port": "6886",
-					"path": [
-						"api",
-						"user",
-						"login"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Add Note (Local)",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Developer\",\r\n    \"notesTitle\": \"Fourth Deno KV note\",\r\n    \"notesSubTitle\": \"This note is stored via Deno KV\",\r\n    \"note\": {\r\n        \"test\": 1,\r\n        \"Note 1\": \"test note\",\r\n        \"hello\": \"Hello from Deno KV\",\r\n        \"my_list\": [\r\n            \"item 1\",\r\n            \"item 2\",\r\n            \"item 3\",\r\n            \"item 4\"\r\n        ]\r\n    }\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:6886/api/kv/note/basic_notes",
-					"host": [
-						"localhost"
-					],
-					"port": "6886",
-					"path": [
-						"api",
-						"kv",
-						"note",
-						"basic_notes"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Notes (Local)",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:6886/api/kv/notes/basic_notes",
-					"host": [
-						"localhost"
-					],
-					"port": "6886",
-					"path": [
-						"api",
-						"kv",
-						"notes",
-						"basic_notes"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Read Note (Local)",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:6886/api/kv/notes/basic_notes/e5574b85-f194-4051-90b9-6fbb797de7e4",
-					"host": [
-						"localhost"
-					],
-					"port": "6886",
-					"path": [
-						"api",
-						"kv",
-						"notes",
-						"basic_notes",
-						"e5574b85-f194-4051-90b9-6fbb797de7e4"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Note (Local)",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Developer\",\r\n    \"notesTitle\": \"Updated Fourth New Deno KV note\",\r\n    \"notesSubTitle\": \"This note is stored via Deno KV\",\r\n    \"note\": {\r\n        \"test\": 1,\r\n        \"Note 1\": \"test note\",\r\n        \"hello\": \"Hello from Deno KV\"\r\n    },\r\n    \"noteId\": \"5c2d964e-67f0-479f-a280-966bf6216674\",\r\n    \"createdAt\": 1686491735802,\r\n    \"updatedAt\": 1686491735802\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:6886/api/kv/notes/basic_notes/e5574b85-f194-4051-90b9-6fbb797de7e4",
-					"host": [
-						"localhost"
-					],
-					"port": "6886",
-					"path": [
-						"api",
-						"kv",
-						"notes",
-						"basic_notes",
-						"e5574b85-f194-4051-90b9-6fbb797de7e4"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete Note (Local)",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"collection\": \"basic_notes\",\r\n    \"id\": \"5c2d964e-67f0-479f-a280-966bf6216674\",\r\n    \"username\": \"Developer\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:6886/api/kv/note",
-					"host": [
-						"localhost"
-					],
-					"port": "6886",
-					"path": [
-						"api",
-						"kv",
-						"note"
-					]
-				}
-			},
-			"response": []
-		}
-	]
+  "info": {
+    "_postman_id": "a6feb275-7d94-46a5-8f13-bb7fa902f180",
+    "name": "Kv Deno Notes Microservice",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "17162627"
+  },
+  "item": [
+    {
+      "name": "# Login",
+      "request": {
+        "auth": {
+          "type": "bearer"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"\",\r\n    \"password\": \"\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:6886/api/user/login",
+          "host": [
+            "localhost"
+          ],
+          "port": "6886",
+          "path": [
+            "api",
+            "user",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Note (Local)",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"Developer\",\r\n    \"notesTitle\": \"Fourth Deno KV note\",\r\n    \"notesSubTitle\": \"This note is stored via Deno KV\",\r\n    \"note\": {\r\n        \"test\": 1,\r\n        \"Note 1\": \"test note\",\r\n        \"hello\": \"Hello from Deno KV\",\r\n        \"my_list\": [\r\n            \"item 1\",\r\n            \"item 2\",\r\n            \"item 3\",\r\n            \"item 4\"\r\n        ]\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:6886/api/kv/note/basic_notes",
+          "host": [
+            "localhost"
+          ],
+          "port": "6886",
+          "path": [
+            "api",
+            "kv",
+            "note",
+            "basic_notes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Notes (Local)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:6886/api/kv/notes/basic_notes",
+          "host": [
+            "localhost"
+          ],
+          "port": "6886",
+          "path": [
+            "api",
+            "kv",
+            "notes",
+            "basic_notes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Read Note (Local)",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:6886/api/kv/notes/basic_notes/e5574b85-f194-4051-90b9-6fbb797de7e4",
+          "host": [
+            "localhost"
+          ],
+          "port": "6886",
+          "path": [
+            "api",
+            "kv",
+            "notes",
+            "basic_notes",
+            "e5574b85-f194-4051-90b9-6fbb797de7e4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Note (Local)",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"Developer\",\r\n    \"notesTitle\": \"Updated Fourth New Deno KV note\",\r\n    \"notesSubTitle\": \"This note is stored via Deno KV\",\r\n    \"note\": {\r\n        \"test\": 1,\r\n        \"Note 1\": \"test note\",\r\n        \"hello\": \"Hello from Deno KV\"\r\n    },\r\n    \"noteId\": \"5c2d964e-67f0-479f-a280-966bf6216674\",\r\n    \"createdAt\": 1686491735802,\r\n    \"updatedAt\": 1686491735802\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:6886/api/kv/notes/basic_notes/e5574b85-f194-4051-90b9-6fbb797de7e4",
+          "host": [
+            "localhost"
+          ],
+          "port": "6886",
+          "path": [
+            "api",
+            "kv",
+            "notes",
+            "basic_notes",
+            "e5574b85-f194-4051-90b9-6fbb797de7e4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Note (Local)",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"collection\": \"basic_notes\",\r\n    \"id\": \"5c2d964e-67f0-479f-a280-966bf6216674\",\r\n    \"username\": \"Developer\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:6886/api/kv/note",
+          "host": [
+            "localhost"
+          ],
+          "port": "6886",
+          "path": [
+            "api",
+            "kv",
+            "note"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
 }

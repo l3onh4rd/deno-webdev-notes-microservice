@@ -15,7 +15,9 @@ const readKvNote = async ({
     const kv = await Deno.openKv();
 
     const notes = [];
-    for await (const result of kv.list({ prefix: [params.collection, params.id] })) {
+    for await (
+      const result of kv.list({ prefix: [params.collection, params.id] })
+    ) {
       notes.push(result.value);
     }
 
@@ -24,7 +26,7 @@ const readKvNote = async ({
         response.status = 404;
         response.body = {
           success: true,
-          message: `No note found`
+          message: `No note found`,
         };
         break;
 
@@ -32,14 +34,14 @@ const readKvNote = async ({
         response.status = 200;
         response.body = {
           success: true,
-          data: notes[0]
+          data: notes[0],
         };
         break;
       default:
         response.status = 500;
         response.body = {
           success: false,
-          msg: "More than one note was found for this id. Major issue."
+          msg: "More than one note was found for this id. Major issue.",
         };
         break;
     }

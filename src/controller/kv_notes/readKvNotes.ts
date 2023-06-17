@@ -14,7 +14,6 @@ const readKvNotes = async ({
   response: any;
 }) => {
   try {
-
     const kv = await Deno.openKv();
 
     const notes = [];
