@@ -2,12 +2,7 @@
  * - function to check if a uuid is already taken during creation process of a note
  */
 
-import {
-  BASE_URI,
-  DATA_API_KEY,
-  DATA_SOURCE,
-  DATABASE,
-} from "../../constants.ts";
+import { BASE_URI, DATA_API_KEY, DATA_SOURCE, DATABASE } from "../constants.ts";
 
 const options = {
   method: "POST",
@@ -39,4 +34,19 @@ async function checkIfUuidIsTaken(
   }
 }
 
-export { checkIfUuidIsTaken };
+async function checkKvIfUuidIsTaken(
+  uuid: string,
+  collection: string,
+): Promise<boolean> {
+  const kv = await Deno.openKv();
+
+  const result = await kv.get([collection, uuid]);
+
+  if (result.value === null) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+export { checkIfUuidIsTaken, checkKvIfUuidIsTaken };

@@ -4,8 +4,7 @@
  * - integrates notes api und user api routes
  */
 
-import router from "./routes.ts";
-import auth_router from "./auth_routes.ts";
+import { auth_router, kv_router, router } from "./routes.ts";
 import { Application, oakCors } from "./deps.ts";
 
 const PORT = 6886;
@@ -16,8 +15,6 @@ app.use(
   oakCors({
     origin: [
       "http://webdevcoffe-deno-microservice.s3-website.eu-central-1.amazonaws.com",
-      "http://localhost:3000",
-      "http://webdev-notes-flow.s3-website.eu-central-1.amazonaws.com"
     ],
   }),
 );
@@ -25,6 +22,9 @@ app.use(
 // use note routes
 app.use(router.routes());
 app.use(router.allowedMethods());
+// use kv routes
+app.use(kv_router.routes());
+app.use(kv_router.allowedMethods());
 // use auth routes
 app.use(auth_router.routes());
 app.use(auth_router.allowedMethods());

@@ -1,0 +1,237 @@
+{
+  "info": {
+    "_postman_id": "4fd39b88-aae0-4f36-b3fc-8b8e990fdf65",
+    "name": "Kv Deno Notes Microservice (Deno Deploy)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "17162627"
+  },
+  "item": [
+    {
+      "name": "# Login",
+      "request": {
+        "auth": {
+          "type": "bearer"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"\",\r\n    \"password\": \"\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://web-dev-coffee-deno.deno.dev/api/user/login",
+          "protocol": "https",
+          "host": [
+            "web-dev-coffee-deno",
+            "deno",
+            "dev"
+          ],
+          "path": [
+            "api",
+            "user",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Note (Local)",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"Leonhard\",\r\n    \"notesTitle\": \"Second Deno KV note\",\r\n    \"notesSubTitle\": \"This note is stored via Deno KV\",\r\n    \"note\": {\r\n        \"test\": 1,\r\n        \"Note 1\": \"test note\",\r\n        \"hello\": \"Hello from Deno KV\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://web-dev-coffee-deno.deno.dev/api/kv/note/basic_notes",
+          "protocol": "https",
+          "host": [
+            "web-dev-coffee-deno",
+            "deno",
+            "dev"
+          ],
+          "path": [
+            "api",
+            "kv",
+            "note",
+            "basic_notes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Notes (Local)",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://web-dev-coffee-deno.deno.dev/api/kv/notes/basic_notes",
+          "protocol": "https",
+          "host": [
+            "web-dev-coffee-deno",
+            "deno",
+            "dev"
+          ],
+          "path": [
+            "api",
+            "kv",
+            "notes",
+            "basic_notes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Read Note (Local)",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://web-dev-coffee-deno.deno.dev/api/kv/notes/basic_notes/d3fca585-4d3c-421a-930d-07f1aec5ebea",
+          "protocol": "https",
+          "host": [
+            "web-dev-coffee-deno",
+            "deno",
+            "dev"
+          ],
+          "path": [
+            "api",
+            "kv",
+            "notes",
+            "basic_notes",
+            "d3fca585-4d3c-421a-930d-07f1aec5ebea"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Note (Local)",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"Leonhard\",\r\n    \"notesTitle\": \"Updated First Deno KV note\",\r\n    \"notesSubTitle\": \"This note is stored via Deno KV\",\r\n    \"note\": {\r\n        \"test\": 1,\r\n        \"Note 1\": \"test note\",\r\n        \"hello\": \"Hello from Deno KV\"\r\n    },\r\n    \"noteId\": \"d3fca585-4d3c-421a-930d-07f1aec5ebea\",\r\n    \"createdAt\": 1687031226810,\r\n    \"updatedAt\": 1687031226810\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://web-dev-coffee-deno.deno.dev/api/kv/notes/basic_notes/d3fca585-4d3c-421a-930d-07f1aec5ebea",
+          "protocol": "https",
+          "host": [
+            "web-dev-coffee-deno",
+            "deno",
+            "dev"
+          ],
+          "path": [
+            "api",
+            "kv",
+            "notes",
+            "basic_notes",
+            "d3fca585-4d3c-421a-930d-07f1aec5ebea"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Note (Local)",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"collection\": \"basic_notes\",\r\n    \"id\": \"3d889e1b-aa10-433d-bf48-02611822bb05\",\r\n    \"username\": \"Leonhard\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://web-dev-coffee-deno.deno.dev/api/kv/note",
+          "protocol": "https",
+          "host": [
+            "web-dev-coffee-deno",
+            "deno",
+            "dev"
+          ],
+          "path": [
+            "api",
+            "kv",
+            "note"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

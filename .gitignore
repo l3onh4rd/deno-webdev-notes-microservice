@@ -1,1 +1,7 @@
 .vscode
+server.exe
+server
+
+# test covarage files
+coverage_files
+coverage.lcov

@@ -9,6 +9,7 @@ import {
   DATABASE_USER,
 } from "../../constants.ts";
 import { checkIfUsernamIsTaken } from "../../utils/index.ts";
+import { validatePassword, validateUsername } from "../../utils/index.ts";
 
 const options = {
   method: "POST",
@@ -40,6 +41,28 @@ const updateUser = async ({
       response.body = {
         success: false,
         message: "Username already exists",
+      };
+      return;
+    }
+
+    // validate pattern of password
+
+    if (!validatePassword(user.password)) {
+      response.status = 409;
+      response.body = {
+        success: false,
+        message: "Password pattern is invalid.",
+      };
+      return;
+    }
+
+    // validate pattern of username
+
+    if (!validateUsername(user.username)) {
+      response.status = 409;
+      response.body = {
+        success: false,
+        message: "Username pattern is invalid.",
       };
       return;
     }

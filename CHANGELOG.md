@@ -1,5 +1,45 @@
 # Changelog of WebDev Notes Microservice (Deno)
 
+## 0.4.0
+
+### Features
+
+- added deno.lock file
+- added "deno task update" (performs deno upgrade) to avoid confusion with deno
+  upgrade
+- removed lock.json file (replaced by deno.lock file)
+  ([Issue 31](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/31))
+- adapted loadDep and updateDep task accordingly to the new deno.lock file
+  ([Issue 31](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/31))
+- bench command is stable
+- refined permissons for start and test task
+  ([Issue 4](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/4))
+- added execute task to create exetuable file (added file to git ignore as well)
+  ([Issue 33](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/33))
+- combined auth and notes router in one file, use auth middleware generally for
+  notes router
+  ([Issue 34](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/34))
+- Username pattern validation - min. 8 characters, max. 30 characters, only
+  alphanumeric values
+  ([Issue 35](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/35))
+  ([Issue 40](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/40))
+  ([Issue 41](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/41))
+- Password pattern validation - min. 12 characters, max. 64 characters, only
+  alphanumeric values and ! " § % & / ( ) = ? : ; -
+  ([Issue 35](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/35))
+  ([Issue 40](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/40))
+  ([Issue 41](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/41))
+- added coverage report command to generate lcov report file
+  ([Issue 55](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/55))
+- added api to create, read, read all, update and delte notes with Deno KV as
+  database
+  ([Issue 70](https://github.com/l3onh4rd/deno-webdev-notes-microservice/issues/70))
+
+### Updates
+
+- updated deno v1.27.1 -> v1.34.3
+- updated std v0.162.0 -> v0.192.0
+
 ## 0.3.0
 
 ### Features
