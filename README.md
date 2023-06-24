@@ -1,6 +1,6 @@
 # Deno Notes Microservice
 
-Microservice for notes data transfer. Made with Deno, MongoDB and ❤️
+Microservice with an API to create, read, update and delete notes. Made with Deno, Deno KV, Deno Deploy, MongoDB and ❤️
 
 ## Table of Contents
 
@@ -24,10 +24,8 @@ Microservice for notes data transfer. Made with Deno, MongoDB and ❤️
 ## General Description
 
 This Microservice provides an API to create, read, update and delete Notes.
-Furthermore it provides routes to create User and perform a login. This service
-was made for a 'WebDev' presentation in july 2022. One outcome of this
-presentation was that this service could be used for other presentations.
-Therefore this repository contains the source code of the service for general
+Furthermore it provides routes to create users and perform a login. This service
+was made for a presentation in July 2022. The service is maintained until now and gets updated frquently. Therefore this repository contains the source code of the service for general
 use and contribution to the project.
 
 ## Contribution
@@ -41,7 +39,7 @@ the main branch and it gets deployed to the production server.
 
 ## Branches
 
-Beside the main branch this repository contains an integration branch ('int').
+Beside the main branch this repository has an integration branch named 'int'.
 If you contribute please create yourself a feature branch from the integration
 branch. Please create a pull request from you feature branch to the integration
 branch.
@@ -49,11 +47,15 @@ branch.
 ## Local Setup
 
 To use the services locally on your machine please make sure you have the latest
-version of deno installed ([check latest version here](https://deno.land/)).
-Check the latest changelog entry about the last deno update as well. To access
+version of deno installed (check latest version on the official [Deno Homepage](https://deno.land/)).
+Check the latest changelog entry about the last deno update as well.
+
+To access
 the database locally you have to setup environment variables. Please contact me
 to get them. If you perform requests locally always keep in mind that you
-perform requests to the production database. To cache all dependencies (similar
+perform requests to the production database.
+
+To cache all dependencies (similar
 to npm/yarn install) run the loadDep task or check the related
 [chapter](#dependency-management). Use the deno task commands to start the
 application described in the next step.
@@ -66,10 +68,10 @@ commands again and again. Please run them from the root folder.
 | Task name              | Info                                                                                                                                                                                                                                                                                                       | Command                                                                                                                |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | `update`               | upgrades to latest deno release                                                                                                                                                                                                                                                                            | deno upgrade                                                                                                           |
-| `start`                | starts the application on localhost:6886                                                                                                                                                                                                                                                                   | deno run --unstable --allow-env --allow-net ./src/server.ts                                                            |
-| `start-unstable`       | starts the application on localhost:6886 with unstable flag to use unstable features                                                                                                                                                                                                                       | deno run --allow-env --allow-net ./src/server.ts                                                                       |
+| `start`                | starts the application on localhost:6886                                                                                                                                                                                                                                                                   | deno run --allow-env --allow-net ./src/server.ts                                                            |
+| `start-unstable`       | starts the application on localhost:6886 with unstable flag to use unstable features                                                                                                                                                                                                                       | deno run --unstable  --allow-env --allow-net ./src/server.ts                                                                       |
 | `test`                 | runs all tests of the project                                                                                                                                                                                                                                                                              | deno test --allow-env --allow-net                                                                                      |
-| `test-coverage`        | Generates a test coverage report with coverage files in the coverage_files folder. Then a coverage report file (lcov) is generated. You can process that file with tools like genhtml or online visualization tools. Those files are added to the gitignore and shouldn't be committet to this repository. | deno test --allow-env --allow-net --coverage=coverage_files;deno coverage coverage_files --lcov --output=coverage.lcov |
+| `test-coverage`        | Generates a test coverage report with coverage files in the coverage_files folder. After that a coverage report file (lcov) is generated. You can process that file with tools like genhtml or online visualization tools. Those files are added to the gitignore and shouldn't be committet to this repository. | deno test --allow-env --allow-net --coverage=coverage_files;deno coverage coverage_files --lcov --output=coverage.lcov |
 | `updateDep`            | Updates dependencies from deps.ts file and caches them locally                                                                                                                                                                                                                                             | deno cache --lock=lock.json --lock-write src/deps.ts                                                                   |
 | `loadDep`              | Loads dependencies and caches them locally                                                                                                                                                                                                                                                                 | deno cache --lock=json src/deps.ts                                                                                     |
 | `benchmark`            | runs benchmarks                                                                                                                                                                                                                                                                                            | deno bench --allow-env src/benchmark/benchmark.ts                                                                      |
@@ -112,8 +114,6 @@ https://web-dev-coffee-deno.deno.dev/
 !!! KEEP IN MIND THAT THERE IS ONLY ONE DATABASE INSTANCE !!! If you perform
 requests locally they affect the production database and the production
 deployment as well.
-
-For further details please contact me.
 
 ## Releases
 
