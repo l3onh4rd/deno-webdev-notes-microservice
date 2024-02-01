@@ -2,10 +2,15 @@
 
 ## Next Release
 
+### Features
+
+- added start-unstable task
+  - currently it uses the unstable-kv flag
+
 ### Updates
 
-- updated deno v1.27.1 -> v1.40.0
-- updated std v0.162.0 -> v0.213.0
+- updated deno v1.27.1 -> v1.40.3
+- updated std v0.162.0 -> v0.214.0
 
 ## 0.4.0
 
