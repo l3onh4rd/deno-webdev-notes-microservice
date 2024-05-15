@@ -9,7 +9,7 @@
 
 ### Updates
 
-- updated deno v1.27.1 -> v1.43.1
+- updated deno v1.27.1 -> v1.43.3
 - updated std v0.162.0 -> v0.224.0
 
 ## 0.4.0
