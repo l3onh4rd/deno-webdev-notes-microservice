@@ -6,11 +6,12 @@
 
 - added start-unstable task
   - currently it uses the unstable-kv flag
+- updated deno std imports to JSR
 
 ### Updates
 
 - updated deno v1.27.1 -> v1.43.3
-- updated std v0.162.0 -> v0.224.0
+- (deprecated since JSR) updated std v0.162.0 -> v0.224.0
 
 ## 0.4.0
 
