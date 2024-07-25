@@ -14,7 +14,7 @@
     "executable-linux": "deno compile --target=x86_64-unknown-linux-gnu --allow-net --allow-env ./src/server.ts"
   },
   "imports": {
-    "@std/testing": "jsr:@std/testing@^0.225.1",
-    "@std/uuid": "jsr:@std/uuid@^0.224.3"
+    "@std/testing": "jsr:@std/testing@^0.225.3",
+    "@std/uuid": "jsr:@std/uuid@^1.0.0"
   }
 }
