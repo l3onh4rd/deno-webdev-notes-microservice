@@ -2,17 +2,17 @@
  * test file for util functions
  */
 
-import { t } from "../src/deps.ts";
+import { assertEquals } from "../src/deps.ts";
 import { checkIfUsernamIsTaken } from "../src/utils/index.ts";
 
 Deno.test("test checkIfUsernamIsTaken utils function, should return true for existing user", async () => {
   const expected = true;
   const actual = await checkIfUsernamIsTaken("Leonhard");
-  t.assertEquals(actual, expected);
+  assertEquals(actual, expected);
 });
 
 Deno.test("test checkIfUsernamIsTaken utils function, should return false for not existing user", async () => {
   const expected = false;
   const actual = await checkIfUsernamIsTaken("test_username");
-  t.assertEquals(actual, expected);
+  assertEquals(actual, expected);
 });
