@@ -10,10 +10,11 @@
 
 ### Updates
 
-- updated deno v1.27.1 -> v1.45.3
+- updated deno v1.27.1 -> v1.45.5
 - (deprecated since JSR) updated std v0.162.0 -> v0.224.0
 - @std/uuid -> v1.0.0
-- @std/testing -> v0.225.3
+- removed jsr@std/testing -> v0.225.3
+- added jsr@std/assert -> v1.0.2
 
 ## 0.4.0
 

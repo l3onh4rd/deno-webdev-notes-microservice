@@ -22,5 +22,5 @@ export {
 export type { Header, Payload } from "https://deno.land/x/djwt@v2.4/mod.ts";
 
 // deno std dependencies
+export { assertEquals } from "@std/assert";
 export { v4 } from "@std/uuid";
-export * as t from "@std/testing/asserts";
