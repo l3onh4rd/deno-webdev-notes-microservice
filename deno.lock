@@ -2,33 +2,33 @@
   "version": "3",
   "packages": {
     "specifiers": {
-      "jsr:@std/assert@^1.0.2": "jsr:@std/assert@1.0.2",
-      "jsr:@std/bytes@^1.0.1-rc.3": "jsr:@std/bytes@1.0.2",
-      "jsr:@std/crypto@^1.0.0-rc.1": "jsr:@std/crypto@1.0.2",
-      "jsr:@std/internal@^1.0.1": "jsr:@std/internal@1.0.1",
-      "jsr:@std/uuid@^1.0.0": "jsr:@std/uuid@1.0.0"
+      "jsr:@std/assert@^1.0.4": "jsr:@std/assert@1.0.4",
+      "jsr:@std/bytes@^1.0.2": "jsr:@std/bytes@1.0.2",
+      "jsr:@std/crypto@^1.0.3": "jsr:@std/crypto@1.0.3",
+      "jsr:@std/internal@^1.0.3": "jsr:@std/internal@1.0.3",
+      "jsr:@std/uuid@^1.0.3": "jsr:@std/uuid@1.0.3"
     },
     "jsr": {
-      "@std/assert@1.0.2": {
-        "integrity": "ccacec332958126deaceb5c63ff8b4eaf9f5ed0eac9feccf124110435e59e49c",
+      "@std/assert@1.0.4": {
+        "integrity": "d4c767ea578e5bc09c15b6e503376003e5b2d1f4c0cdf08524a92101ff4d7b96",
         "dependencies": [
-          "jsr:@std/internal@^1.0.1"
+          "jsr:@std/internal@^1.0.3"
         ]
       },
       "@std/bytes@1.0.2": {
         "integrity": "fbdee322bbd8c599a6af186a1603b3355e59a5fb1baa139f8f4c3c9a1b3e3d57"
       },
-      "@std/crypto@1.0.2": {
-        "integrity": "bb515dbcd4d67aacf0ffece643a434811ea06e5b544f03c33ba58552fbdb87c7"
+      "@std/crypto@1.0.3": {
+        "integrity": "a2a32f51ddef632d299e3879cd027c630dcd4d1d9a5285d6e6788072f4e51e7f"
       },
-      "@std/internal@1.0.1": {
-        "integrity": "6f8c7544d06a11dd256c8d6ba54b11ed870aac6c5aeafff499892662c57673e6"
+      "@std/internal@1.0.3": {
+        "integrity": "208e9b94a3d5649bd880e9ca38b885ab7651ab5b5303a56ed25de4755fb7b11e"
       },
-      "@std/uuid@1.0.0": {
-        "integrity": "32595ccd31756728c9110cb98e25000e72b8d63151b7211034ea081761ed2104",
+      "@std/uuid@1.0.3": {
+        "integrity": "843b5adb6ab387344751c4255629dba484ca4a3e998c3566d709404855cd62b7",
         "dependencies": [
-          "jsr:@std/bytes@^1.0.1-rc.3",
-          "jsr:@std/crypto@^1.0.0-rc.1"
+          "jsr:@std/bytes@^1.0.2",
+          "jsr:@std/crypto@^1.0.3"
         ]
       }
     }
@@ -115,8 +115,8 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@std/assert@^1.0.2",
-      "jsr:@std/uuid@^1.0.0"
+      "jsr:@std/assert@^1.0.4",
+      "jsr:@std/uuid@^1.0.3"
     ]
   }
 }
